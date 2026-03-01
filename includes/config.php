@@ -30,7 +30,7 @@ define('JWT_EXPIRATION', 7200); // 2 ore in secondi
 define('SESSION_NAME', 'anteas_session');
 define('SESSION_LIFETIME', 7200); // 2 ore
 define('CSRF_TOKEN_NAME', 'csrf_token');
-define('RATE_LIMIT_ATTEMPTS', 5);
+define('RATE_LIMIT_ATTEMPTS', 100);
 define('RATE_LIMIT_WINDOW', 900); // 15 minuti
 
 // Upload Configuration
