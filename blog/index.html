@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Anteas Lucca</title>
+    <meta name="description" content="Notizie, eventi e aggiornamenti da Anteas Lucca. Scopri le ultime attività dell'associazione.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../public/apple-touch-icon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/css/tailwind.config.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="../index.html" class="flex items-center gap-3">
+                    <img src="../public/logo/logo.svg" alt="Anteas Lucca" class="w-12 h-12 object-contain">
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">Anteas Lucca</span>
+                        <p class="text-xs text-gray-500">Associazione di Volontariato</p>
+                    </div>
+                </a>
+                
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Home</a>
+                    <a href="../chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Chi Siamo</a>
+                    <a href="../servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Servizi</a>
+                    <a href="../gite.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Gite</a>
+                    <a href="index.html" class="text-cyan-600 font-semibold">Blog</a>
+                    <a href="../contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Contatti</a>
+                    <a href="../5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">5×1000</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <a href="/admin/index.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm">
+                        <i data-lucide="lock" class="w-4 h-4"></i>
+                        Area Riservata
+                    </a>
+                    <button id="menu-toggle" class="lg:hidden p-2 text-gray-600 hover:text-cyan-600 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="absolute inset-0 bg-black/50" id="menu-close"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-bold text-gray-900">Menu</span>
+                    <button id="menu-close-btn" class="p-2 text-gray-600 hover:text-cyan-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Home</a>
+                    <a href="../chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Chi Siamo</a>
+                    <a href="../servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Servizi</a>
+                    <a href="../gite.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Gite</a>
+                    <a href="index.html" class="text-cyan-600 font-semibold py-2 border-b border-gray-100">Blog</a>
+                    <a href="../contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Contatti</a>
+                    <a href="../5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">5×1000</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Notizie e aggiornamenti</span>
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">Blog</h1>
+                <p class="text-xl text-gray-600">Le ultime notizie, eventi e attività di Anteas Lucca</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Articles Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Articles will be loaded by JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Categorie</h2>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-6 py-3 bg-cyan-100 text-cyan-700 rounded-full font-medium hover:bg-cyan-200 transition-colors">
+                    Tutti gli articoli
+                </a>
+                <a href="#" class="px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                    Eventi
+                </a>
+                <a href="#" class="px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                    5×1000
+                </a>
+                <a href="#" class="px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                    Insieme
+                </a>
+                <a href="#" class="px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                    Riflessioni
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-cyan-600 to-blue-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Resta aggiornato</h2>
+            <p class="text-cyan-100 text-lg mb-8">Iscriviti per ricevere le ultime notizie e gli eventi di Anteas Lucca</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="La tua email" 
+                       class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white/50">
+                <button type="submit" class="px-8 py-4 bg-white text-cyan-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                    Iscriviti
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Anteas Lucca</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Associazione tutte le età attive per la solidarietà.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Link Rapidi</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../chi-siamo.html" class="hover:text-cyan-400 transition-colors">Chi Siamo</a></li>
+                        <li><a href="../servizi.html" class="hover:text-cyan-400 transition-colors">Servizi</a></li>
+                        <li><a href="../gite.html" class="hover:text-cyan-400 transition-colors">Gite</a></li>
+                        <li><a href="index.html" class="hover:text-cyan-400 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contatti</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1 text-cyan-500"></i>
+                            <span>Viale Puccini, 1780<br>55100 Lucca (LU)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+                            <span>0583 508862</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">5×1000</h3>
+                    <p class="text-gray-400 text-sm mb-2">Codice Fiscale:</p>
+                    <p class="text-white font-mono text-sm">92019070462</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <p class="text-center text-sm">&copy; 2024 Anteas Lucca. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script>
+        // Load all articles
+        document.addEventListener('DOMContentLoaded', function() {
+            loadArticles('articles-grid');
+        });
+        
+        // Mobile menu close
+        document.getElementById('menu-close-btn')?.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+    </script>
+</body>
+</html>

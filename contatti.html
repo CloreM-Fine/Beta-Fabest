@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Anteas Lucca</title>
+    <meta name="description" content="Contatta Anteas Lucca. Sede in Viale Puccini 1780, Lucca. Tel: 0583 508862. Email: anteaslucca@pec.it">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/css/tailwind.config.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="public/logo/logo.svg" alt="Anteas Lucca" class="w-12 h-12 object-contain">
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">Anteas Lucca</span>
+                        <p class="text-xs text-gray-500">Associazione di Volontariato</p>
+                    </div>
+                </a>
+                
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Home</a>
+                    <a href="chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Chi Siamo</a>
+                    <a href="servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Servizi</a>
+                    <a href="gite.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Blog</a>
+                    <a href="contatti.html" class="text-cyan-600 font-semibold">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">5×1000</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <a href="/admin/index.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm">
+                        <i data-lucide="lock" class="w-4 h-4"></i>
+                        Area Riservata
+                    </a>
+                    <button id="menu-toggle" class="lg:hidden p-2 text-gray-600 hover:text-cyan-600 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="absolute inset-0 bg-black/50" id="menu-close"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-bold text-gray-900">Menu</span>
+                    <button id="menu-close-btn" class="p-2 text-gray-600 hover:text-cyan-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Home</a>
+                    <a href="chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Chi Siamo</a>
+                    <a href="servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Servizi</a>
+                    <a href="gite.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Blog</a>
+                    <a href="contatti.html" class="text-cyan-600 font-semibold py-2 border-b border-gray-100">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">5×1000</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-cyan-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Siamo qui per te</span>
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">Contattaci</h1>
+                <p class="text-xl text-gray-600">Hai domande o vuoi richiedere i nostri servizi? Scriveci o vienici a trovare</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Info Cards -->
+    <section class="py-16 -mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Indirizzo -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Sede</h3>
+                    <p class="text-gray-600">Viale Puccini, 1780<br>55100 Lucca (LU)</p>
+                </div>
+                
+                <!-- Telefono -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="phone" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Telefono</h3>
+                    <p class="text-gray-600">0583 508862</p>
+                    <p class="text-sm text-gray-500 mt-1">Cell. trasporto: 328 736 8068</p>
+                </div>
+                
+                <!-- Email -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
+                    <p class="text-gray-600">anteaslucca@pec.it</p>
+                    <p class="text-sm text-gray-500 mt-1">sociale@anteaslucca.it</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Form e Mappa -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Scrivici un messaggio</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Nome *</label>
+                                <input type="text" id="nome" name="nome" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all"
+                                       placeholder="Il tuo nome">
+                            </div>
+                            <div>
+                                <label for="cognome" class="block text-sm font-medium text-gray-700 mb-2">Cognome *</label>
+                                <input type="text" id="cognome" name="cognome" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all"
+                                       placeholder="Il tuo cognome">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all"
+                                   placeholder="tua@email.it">
+                        </div>
+                        
+                        <div>
+                            <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Telefono</label>
+                            <input type="tel" id="telefono" name="telefono"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all"
+                                   placeholder="Il tuo numero di telefono">
+                        </div>
+                        
+                        <div>
+                            <label for="oggetto" class="block text-sm font-medium text-gray-700 mb-2">Oggetto</label>
+                            <select id="oggetto" name="oggetto"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all">
+                                <option value="">Seleziona un oggetto</option>
+                                <option value="informazioni">Richiesta informazioni</option>
+                                <option value="trasporto">Trasporto sociale</option>
+                                <option value="gite">Gite e viaggi</option>
+                                <option value="volontariato">Diventare volontario</option>
+                                <option value="5x1000">5×1000</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="messaggio" class="block text-sm font-medium text-gray-700 mb-2">Messaggio *</label>
+                            <textarea id="messaggio" name="messaggio" rows="5" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all resize-none"
+                                      placeholder="Scrivi il tuo messaggio..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="privacy" name="privacy" required
+                                   class="w-5 h-5 mt-0.5 text-cyan-600 border-gray-300 rounded focus:ring-cyan-500">
+                            <label for="privacy" class="text-sm text-gray-600">
+                                Ho letto e accetto la <a href="privacy.html" class="text-cyan-600 hover:underline">Privacy Policy</a>. Autorizzo il trattamento dei miei dati personali per ricevere una risposta alla mia richiesta. *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition-colors">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            Invia messaggio
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (hidden by default) -->
+                    <div id="success-message" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <p class="text-green-800 font-medium">Messaggio inviato con successo! Ti risponderemo al più presto.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mappa e Info -->
+                <div class="space-y-8">
+                    <!-- Mappa -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-80">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.0479240989857!2d10.494!3d43.8418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDUwJzMwLjUiTiAxMMKwMjknMzguNCJF!5e0!3m2!1sit!2sit!4v1609459200000!5m2!1sit!2sit"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Orari -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <i data-lucide="clock" class="w-5 h-5 text-cyan-600"></i>
+                            Orari di apertura
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-600">Lunedì - Venerdì</span>
+                                <span class="font-medium text-gray-900">9:00 - 13:00 / 15:00 - 18:00</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-600">Sabato</span>
+                                <span class="font-medium text-gray-900">9:00 - 12:00</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-600">Domenica</span>
+                                <span class="font-medium text-gray-500">Chiuso</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Seguici sui social</h3>
+                        <div class="flex items-center gap-4">
+                            <a href="https://www.facebook.com/anteas.lucca" target="_blank" rel="noopener" 
+                               class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <i data-lucide="facebook" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Referenti -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">I nostri referenti</h2>
+                <p class="text-gray-600">Contatta direttamente il referente per il servizio di tuo interesse</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="user" class="w-8 h-8 text-cyan-600"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Massimo Santoni</h3>
+                    <p class="text-cyan-600 text-sm mb-2">Presidente</p>
+                    <p class="text-gray-500 text-sm">Per informazioni generali</p>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="user" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Alfonso</h3>
+                    <p class="text-green-600 text-sm mb-2">Referente Gite</p>
+                    <p class="text-gray-500 text-sm">Per programma e prenotazioni gite</p>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="user" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Servizi Sociali</h3>
+                    <p class="text-amber-600 text-sm mb-2">Referente</p>
+                    <p class="text-gray-500 text-sm">Per trasporto e compagnia</p>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="user" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Redazione</h3>
+                    <p class="text-purple-600 text-sm mb-2">Comunicazione</p>
+                    <p class="text-gray-500 text-sm">Per comunicati e blog</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Anteas Lucca</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Associazione tutte le età attive per la solidarietà.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.facebook.com/anteas.lucca" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-600 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Link Rapidi</h3>
+                    <ul class="space-y-3">
+                        <li><a href="chi-siamo.html" class="hover:text-cyan-400 transition-colors">Chi Siamo</a></li>
+                        <li><a href="servizi.html" class="hover:text-cyan-400 transition-colors">Servizi</a></li>
+                        <li><a href="gite.html" class="hover:text-cyan-400 transition-colors">Gite</a></li>
+                        <li><a href="blog/index.html" class="hover:text-cyan-400 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contatti</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1 text-cyan-500"></i>
+                            <span>Viale Puccini, 1780<br>55100 Lucca (LU)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+                            <span>0583 508862</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-cyan-500"></i>
+                            <span>anteaslucca@pec.it</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">5×1000</h3>
+                    <p class="text-gray-400 text-sm mb-4">Sostieni le nostre attività con il tuo 5×1000</p>
+                    <p class="text-white font-mono text-sm">C.F. 92019070462</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <p class="text-center text-sm">&copy; 2024 Anteas Lucca. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Mobile menu close
+        document.getElementById('menu-close-btn')?.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+        
+        // Form submission
+        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In produzione, qui ci sarebbe la chiamata AJAX al server
+            // Per ora mostriamo solo il messaggio di successo
+            document.getElementById('success-message').classList.remove('hidden');
+            this.reset();
+            
+            // Scroll al messaggio
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+            
+            // Re-initialize icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

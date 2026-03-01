@@ -1,0 +1,3 @@
+# Deny access to SQL directory
+Order deny,allow
+Deny from all

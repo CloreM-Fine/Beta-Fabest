@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo - Anteas Lucca</title>
+    <meta name="description" content="Scopri Anteas Lucca: associazione di volontariato ODV e APS presente da oltre 20 anni sul territorio lucchese.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/css/tailwind.config.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="public/logo/logo.svg" alt="Anteas Lucca" class="w-12 h-12 object-contain">
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">Anteas Lucca</span>
+                        <p class="text-xs text-gray-500">Associazione di Volontariato</p>
+                    </div>
+                </a>
+                
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Home</a>
+                    <a href="chi-siamo.html" class="text-cyan-600 font-semibold">Chi Siamo</a>
+                    <a href="servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Servizi</a>
+                    <a href="gite.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Blog</a>
+                    <a href="contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">5×1000</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <a href="/admin/index.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm">
+                        <i data-lucide="lock" class="w-4 h-4"></i>
+                        Area Riservata
+                    </a>
+                    <button id="menu-toggle" class="lg:hidden p-2 text-gray-600 hover:text-cyan-600 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="absolute inset-0 bg-black/50" id="menu-close"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-bold text-gray-900">Menu</span>
+                    <button id="menu-close-btn" class="p-2 text-gray-600 hover:text-cyan-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Home</a>
+                    <a href="chi-siamo.html" class="text-cyan-600 font-semibold py-2 border-b border-gray-100">Chi Siamo</a>
+                    <a href="servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Servizi</a>
+                    <a href="gite.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Blog</a>
+                    <a href="contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">5×1000</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Scopri chi siamo</span>
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">Chi Siamo</h1>
+                <p class="text-xl text-gray-600">Associazione tutte le età attive per la solidarietà</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">La nostra storia</h2>
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="mb-4">Anteas Lucca è un'associazione di volontariato presente da <strong>oltre 20 anni</strong> sul territorio con iniziative, progetti e aiuti in campo sociale.</p>
+                        
+                        <p class="mb-4">Siamo un'organizzazione vicina alla <strong>CISL</strong> che opera per promuovere la solidarietà e l'aiuto concreto alle persone in difficoltà, con particolare attenzione agli anziani e alle fasce deboli della società.</p>
+                        
+                        <p class="mb-4">Il nostro impegno si concretizza in servizi di trasporto sociale, compagnia agli anziani, installazione di defibrillatori nei comuni della provincia, organizzazione di gite culturali e molte altre attività di promozione sociale.</p>
+                        
+                        <p>Crediamo in una società più giusta e solidale, dove ogni persona possa sentirsi parte di una comunità che si prende cura dei suoi membri più fragili.</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" 
+                             alt="Volontariato" 
+                             class="rounded-2xl shadow-xl w-full">
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-lg">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 bg-cyan-100 rounded-full flex items-center justify-center">
+                                    <i data-lucide="award" class="w-7 h-7 text-cyan-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-900">20+</p>
+                                    <p class="text-gray-600">Anni di attività</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ODV vs APS Section -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Riconoscimenti</h2>
+                <p class="text-gray-600">Anteas Lucca è riconosciuta sia come Organizzazione di Volontariato (ODV) che come Associazione di Promozione Sociale (APS)</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- ODV Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="heart-handshake" class="w-8 h-8 text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">ODV - Organizzazione di Volontariato</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Attività di volontariato gratuito e personale</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Finalità di solidarietà sociale</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Non fini di lucro</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Registrate nel Registro Regionale del Volontariato</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- APS Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="users-2" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">APS - Associazione di Promozione Sociale</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Attività di promozione sociale e culturale</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Tutela dei diritti civili, sociali e ambientali</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Attività di formazione e informazione</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Collaborazione con enti pubblici e privati</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">La nostra squadra</h2>
+                <p class="text-gray-600">Le persone che guidano Anteas Lucca con impegno e dedizione</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Presidente -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-24 h-24 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="user" class="w-12 h-12 text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Massimo Santoni</h3>
+                    <p class="text-cyan-600 font-medium mb-2">Presidente</p>
+                    <p class="text-gray-600 text-sm">Eletto nel luglio 2025, guida l'associazione con impegno e visione per il futuro.</p>
+                </div>
+                
+                <!-- Ex Presidente -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="user" class="w-12 h-12 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Giovanni Bolognini</h3>
+                    <p class="text-gray-500 font-medium mb-2">Ex Presidente</p>
+                    <p class="text-gray-600 text-sm">Ha guidato l'associazione per oltre un quinquennio con dedizione.</p>
+                </div>
+                
+                <!-- Referente Gite -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-24 h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="user" class="w-12 h-12 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Alfonso</h3>
+                    <p class="text-green-600 font-medium mb-2">Referente Gite</p>
+                    <p class="text-gray-600 text-sm">Organizza e coordina le gite culturali e i viaggi dell'associazione.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">I nostri partner</h2>
+                <p class="text-gray-600">Collaboriamo con importanti realtà del territorio e nazionali</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center items-center gap-8">
+                <div class="bg-white rounded-xl px-8 py-6 shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="building-2" class="w-8 h-8 text-cyan-600"></i>
+                        <span class="font-bold text-gray-900">CISL</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl px-8 py-6 shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="heart-pulse" class="w-8 h-8 text-red-500"></i>
+                        <span class="font-bold text-gray-900">FNP CISL</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl px-8 py-6 shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-green-600"></i>
+                        <span class="font-bold text-gray-900">Comune di Lucca</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-cyan-600 to-blue-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Vuoi diventare volontario?</h2>
+            <p class="text-cyan-100 text-lg mb-8">Unisciti a noi nel nostro impegno per una società più solidale. Ogni aiuto è prezioso!</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contatti.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-cyan-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Contattaci
+                </a>
+                <a href="5x1000.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                    Dona il 5×1000
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Anteas Lucca</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Associazione tutte le età attive per la solidarietà. Da oltre 20 anni al servizio del territorio.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.facebook.com/anteas.lucca" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-600 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-600 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Link Rapidi</h3>
+                    <ul class="space-y-3">
+                        <li><a href="chi-siamo.html" class="hover:text-cyan-400 transition-colors">Chi Siamo</a></li>
+                        <li><a href="servizi.html" class="hover:text-cyan-400 transition-colors">Servizi</a></li>
+                        <li><a href="gite.html" class="hover:text-cyan-400 transition-colors">Gite</a></li>
+                        <li><a href="blog/index.html" class="hover:text-cyan-400 transition-colors">Blog</a></li>
+                        <li><a href="5x1000.html" class="hover:text-cyan-400 transition-colors">5×1000</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Servizi</h3>
+                    <ul class="space-y-3">
+                        <li><a href="servizi.html#trasporto" class="hover:text-cyan-400 transition-colors">Trasporto Sociale</a></li>
+                        <li><a href="servizi.html#compagnia" class="hover:text-cyan-400 transition-colors">Compagnia Anziani</a></li>
+                        <li><a href="servizi.html#dae" class="hover:text-cyan-400 transition-colors">Defibrillatori</a></li>
+                        <li><a href="gite.html" class="hover:text-cyan-400 transition-colors">Gite Culturali</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contatti</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1 text-cyan-500"></i>
+                            <span>Viale Puccini, 1780<br>55100 Lucca (LU)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+                            <span>0583 508862</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-cyan-500"></i>
+                            <span>328 736 8068</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-cyan-500"></i>
+                            <span>anteaslucca@pec.it</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+                    <p>&copy; 2024 Anteas Lucca. Tutti i diritti riservati.</p>
+                    <div class="flex items-center gap-6">
+                        <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+                        <a href="cookie.html" class="hover:text-cyan-400 transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('menu-close-btn')?.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+    </script>
+</body>
+</html>

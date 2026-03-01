@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizi - Anteas Lucca</title>
+    <meta name="description" content="Scopri i servizi di Anteas Lucca: trasporto sociale, compagnia agli anziani, defibrillatori DAE, gite culturali e corsi di informatica.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/css/tailwind.config.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="public/logo/logo.svg" alt="Anteas Lucca" class="w-12 h-12 object-contain">
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">Anteas Lucca</span>
+                        <p class="text-xs text-gray-500">Associazione di Volontariato</p>
+                    </div>
+                </a>
+                
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Home</a>
+                    <a href="chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Chi Siamo</a>
+                    <a href="servizi.html" class="text-cyan-600 font-semibold">Servizi</a>
+                    <a href="gite.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Blog</a>
+                    <a href="contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">5×1000</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <a href="/admin/index.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm">
+                        <i data-lucide="lock" class="w-4 h-4"></i>
+                        Area Riservata
+                    </a>
+                    <button id="menu-toggle" class="lg:hidden p-2 text-gray-600 hover:text-cyan-600 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="absolute inset-0 bg-black/50" id="menu-close"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-bold text-gray-900">Menu</span>
+                    <button id="menu-close-btn" class="p-2 text-gray-600 hover:text-cyan-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Home</a>
+                    <a href="chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Chi Siamo</a>
+                    <a href="servizi.html" class="text-cyan-600 font-semibold py-2 border-b border-gray-100">Servizi</a>
+                    <a href="gite.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Blog</a>
+                    <a href="contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">5×1000</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-cyan-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Cosa offriamo</span>
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">I nostri servizi</h1>
+                <p class="text-xl text-gray-600">Supporto concreto alle persone in difficoltà attraverso progetti di volontariato e servizi sociali</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trasporto Sociale -->
+    <section id="trasporto" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80" 
+                         alt="Trasporto Sociale" 
+                         class="rounded-2xl shadow-xl w-full">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium mb-4">
+                        <i data-lucide="truck" class="w-4 h-4"></i>
+                        Servizio principale
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Trasporto Sociale</h2>
+                    <p class="text-gray-600 mb-4">Offriamo un servizio di trasporto dedicato ad anziani e persone con difficoltà motorie per visite mediche, terapie e commissioni. I nostri volontari garantiscono puntualità, affidabilità e un sorriso.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500"></i>
+                            <span class="text-gray-700">Trasporto per visite mediche e terapie</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500"></i>
+                            <span class="text-gray-700">Accompagnamento per commissioni</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500"></i>
+                            <span class="text-gray-700">Servizio gratuito per chi è in difficoltà</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-500"></i>
+                            <span class="text-gray-700">Prenotazione con almeno 48 ore di anticipo</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="bg-cyan-50 rounded-xl p-4 border-l-4 border-cyan-500">
+                        <p class="text-cyan-800 font-medium">Per prenotare chiama il:</p>
+                        <p class="text-2xl font-bold text-cyan-700">328 736 8068</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Compagnia Anziani -->
+    <section id="compagnia" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium mb-4">
+                        <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+                        Supporto sociale
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Compagnia agli Anziani</h2>
+                    <p class="text-gray-600 mb-4">La solitudine è una delle piaghe del nostro tempo. I volontari di Anteas Lucca dedicano tempo agli anziani attraverso visite domiciliari, conversazioni, letture e attività di socializzazione.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-red-500"></i>
+                            <span class="text-gray-700">Visite domiciliari regolari</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-red-500"></i>
+                            <span class="text-gray-700">Attività di conversazione e lettura</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-red-500"></i>
+                            <span class="text-gray-700">Supporto per uscite e passeggiate</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-red-500"></i>
+                            <span class="text-gray-700">Aiuto nelle piccole commissioni</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=800&q=80" 
+                         alt="Compagnia Anziani" 
+                         class="rounded-2xl shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- DAE -->
+    <section id="dae" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" 
+                         alt="Defibrillatore DAE" 
+                         class="rounded-2xl shadow-xl w-full">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-4">
+                        <i data-lucide="heart-pulse" class="w-4 h-4"></i>
+                        Emergenza sanitaria
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Defibrillatori DAE</h2>
+                    <p class="text-gray-600 mb-4">Anteas Lucca è impegnata in un progetto di installazione di Defibrillatori Automatici Esterni (DAE) nei comuni della provincia di Lucca. Questi dispositivi possono salvare vite in caso di arresto cardiaco.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-500"></i>
+                            <span class="text-gray-700">Installazione in luoghi pubblici strategici</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-500"></i>
+                            <span class="text-gray-700">Formazione all'uso del DAE</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-500"></i>
+                            <span class="text-gray-700">Aumento della sopravvivenza in caso di arresto cardiaco</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-500"></i>
+                            <span class="text-gray-700">Progetto in espansione nei comuni della provincia</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="bg-amber-50 rounded-xl p-4 border-l-4 border-amber-500">
+                        <p class="text-amber-800 font-medium">Installati a: Barga, Altopascio e altri comuni</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gite -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-4">
+                        <i data-lucide="map" class="w-4 h-4"></i>
+                        Tempo libero
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Gite Culturali</h2>
+                    <p class="text-gray-600 mb-4">Organizziamo escursioni, visite culturali e viaggi per scoprire il territorio e socializzare. Le nostre gite sono un'occasione per stare insieme, conoscere luoghi nuovi e fare amicizia.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Visite guidate a musei e luoghi d'arte</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Escursioni nella natura</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Viaggi di più giorni</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-700">Prezzi accessibili per tutti</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="gite.html" class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
+                        Scopri il programma gite
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&q=80" 
+                         alt="Gite" 
+                         class="rounded-2xl shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informatica -->
+    <section id="informatica" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80" 
+                         alt="Corsi di Informatica" 
+                         class="rounded-2xl shadow-xl w-full">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-4">
+                        <i data-lucide="monitor" class="w-4 h-4"></i>
+                        Formazione
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Informatica per Anziani</h2>
+                    <p class="text-gray-600 mb-4">Corsi di alfabetizzazione digitale pensati appositamente per gli anziani. Imparare a usare smartphone, tablet e computer per stare in contatto con i propri cari e usare i servizi online.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500"></i>
+                            <span class="text-gray-700">Uso di smartphone e tablet</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500"></i>
+                            <span class="text-gray-700">Navigazione in internet</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500"></i>
+                            <span class="text-gray-700">Email e videochiamate</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500"></i>
+                            <span class="text-gray-700">Servizi pubblici online (SPID, CIE)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Eventi Culturali -->
+    <section class="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">Cultura e società</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-4">Eventi Culturali</h2>
+                <p class="text-gray-600">Organizziamo incontri, conferenze, spettacoli e attività di animazione per la comunità, promuovendo la cultura e il dibattito su temi sociali importanti.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="mic-2" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Conferenze</h3>
+                    <p class="text-gray-600 text-sm">Incontri su temi sociali, sanitari e culturali con esperti del settore.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="music" class="w-6 h-6 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Spettacoli</h3>
+                    <p class="text-gray-600 text-sm">Eventi musicali, teatrali e di intrattenimento per tutta la famiglia.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-rose-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Gruppi di discussione</h3>
+                    <p class="text-gray-600 text-sm">Spazi di confronto su temi di attualità e interesse comune.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="py-16 bg-cyan-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Hai bisogno di uno dei nostri servizi?</h2>
+            <p class="text-cyan-100 text-lg mb-8">Contattaci per richiedere informazioni o prenotare un servizio. Siamo qui per aiutarti.</p>
+            <a href="contatti.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-cyan-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                Contattaci
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Anteas Lucca</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Associazione tutte le età attive per la solidarietà. Da oltre 20 anni al servizio del territorio.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.facebook.com/anteas.lucca" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-600 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Link Rapidi</h3>
+                    <ul class="space-y-3">
+                        <li><a href="chi-siamo.html" class="hover:text-cyan-400 transition-colors">Chi Siamo</a></li>
+                        <li><a href="servizi.html" class="hover:text-cyan-400 transition-colors">Servizi</a></li>
+                        <li><a href="gite.html" class="hover:text-cyan-400 transition-colors">Gite</a></li>
+                        <li><a href="blog/index.html" class="hover:text-cyan-400 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contatti</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1 text-cyan-500"></i>
+                            <span>Viale Puccini, 1780<br>55100 Lucca (LU)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+                            <span>0583 508862</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-cyan-500"></i>
+                            <span>328 736 8068</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 text-sm mb-4">Iscriviti per ricevere aggiornamenti sulle nostre attività.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="La tua email" class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500">
+                        <button type="submit" class="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition-colors">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+                    <p>&copy; 2024 Anteas Lucca. Tutti i diritti riservati.</p>
+                    <div class="flex items-center gap-6">
+                        <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('menu-close-btn')?.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+    </script>
+</body>
+</html>

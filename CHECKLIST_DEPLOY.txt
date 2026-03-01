@@ -1,0 +1,118 @@
+╔══════════════════════════════════════════════════════════════════╗
+║           🚀 DEPLOY ANTEAS LUCCA - CHECKLIST FINALE              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📦 STEP 1: COMMIT & PUSH SU GITHUB
+─────────────────────────────────────
+[ ] git add .
+[ ] git commit -m "Primo deploy completo"
+[ ] git push origin main
+
+→ Il deploy parte automaticamente! 
+→ Controlla su: GitHub → Actions
+
+
+📂 STEP 2: FILE CHE VERRANNO CARICATI (103 file)
+──────────────────────────────────────────────────
+
+📄 ROOT (8 file):
+  ✓ .htaccess
+  ✓ 5x1000.html
+  ✓ chi-siamo.html
+  ✓ contatti.html
+  ✓ gite.html
+  ✓ index.html
+  ✓ index.php (con componenti header/footer)
+  ✓ servizi.html
+
+📁 ADMIN/ (CMS completo):
+  ✓ index.php, dashboard.php, editor.php
+  ✓ api/auth.php, posts.php, upload.php, csrf.php
+  ✓ assets/css/admin.css
+  ✓ assets/js/auth.js, dashboard.js, editor.js, components.js
+
+📁 API/:
+  ✓ blog.php
+
+📁 INCLUDES/ (Componenti):
+  ✓ header-component.php  ← NUOVO
+  ✓ footer-component.php  ← NUOVO
+  ✓ config.php, db.php, functions.php, jwt.php, auth_check.php
+
+📁 ASSETS/:
+  ✓ css/tailwind.config.js
+  ✓ js/main.js, components.js
+
+📁 BLOG/:
+  ✓ index.html, articolo.html
+
+📁 PUBLIC/:
+  ✓ logo/logo.svg
+  ✓ favicon-*.png
+  ✓ apple-touch-icon.png
+  ✓ site.webmanifest
+
+📁 UPLOADS/ (vuota inizialmente):
+  ✓ .htaccess (protezione)
+
+
+🗄️ STEP 3: DATABASE (da fare UNA VOLTA su SiteGround)
+────────────────────────────────────────────────────────
+[ ] Accedi a phpMyAdmin (SiteGround)
+[ ] Seleziona database: dblz7emtetofi4
+[ ] Vai su "Importa"
+[ ] Carica file: sql/setup-database.sql
+[ ] Clicca "Esegui"
+
+✅ Credenziali già configurate:
+   Host: localhost
+   DB:   dblz7emtetofi4
+   User: urb5jmirausb2
+   Pass: beta123!
+
+
+🔐 STEP 4: PRIMO ACCESSO ADMIN
+────────────────────────────────
+URL: https://www.anteaslucca.org/admin/
+
+Login:
+  Username: anteasadmin
+  Password: admin123!
+
+⚠️ IMPORTANTE: Cambia subito la password!
+   → Dashboard → Impostazioni → Cambia Password
+
+
+✅ VERIFICA POST-DEPLOY
+────────────────────────
+[ ] Homepage carica correttamente
+[ ] Logo visibile in tutte le pagine
+[ ] Menu funzionante
+[ ] Login admin funzionante
+[ ] Database connesso (prova a creare un post)
+[ ] Upload immagini funzionante
+
+
+🔗 URL IMPORTANTI
+──────────────────
+🌐 Sito pubblico:  https://www.anteaslucca.org
+🔐 Area Admin:     https://www.anteaslucca.org/admin/
+📊 GitHub Actions: https://github.com/CloreM-Fine/Beta-Fabest/actions
+
+
+🆘 IN CASO DI PROBLEMI
+───────────────────────
+1. Verifica i secret FTP in GitHub Settings
+2. Controlla i log deploy in GitHub Actions
+3. Verifica permessi cartella uploads/ (755)
+4. Controlla error log PHP in SiteGround
+
+
+📞 CONTATTI SUPPORTO
+─────────────────────
+Repository: https://github.com/CloreM-Fine/Beta-Fabest
+
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🎉 Dopo il deploy, il sito sarà online in 2-3 minuti!          ║
+╚══════════════════════════════════════════════════════════════════╝

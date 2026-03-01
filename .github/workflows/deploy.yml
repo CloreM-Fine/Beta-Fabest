@@ -1,0 +1,51 @@
+name: 🚀 Deploy to SiteGround
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: 📤 Deploy via FTP
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: 📂 List files to deploy
+      run: |
+        echo "Files to be deployed:"
+        ls -la
+        
+    - name: 🚀 Deploy to SiteGround via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_UTENTE }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftp
+        port: 21
+        local-dir: ./
+        server-dir: /public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.github/**
+          **/sql/**
+          **/*.md
+          **/.DS_Store
+          **/articoli/**
+          **/README.md
+          **/BACKEND.md
+          **/ISTRUZIONI_SETUP.md
+        dry-run: false
+        security: loose
+        
+    - name: ✅ Deployment complete
+      run: |
+        echo "✅ Deployment to SiteGround completed!"
+        echo "🌐 Website: https://www.anteaslucca.org"

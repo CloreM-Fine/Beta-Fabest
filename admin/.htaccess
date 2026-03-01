@@ -1,0 +1,37 @@
+# Anteas Lucca - Admin Area Protection
+
+# Deny access to .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Allow access to PHP files only
+<FilesMatch "\.(php)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Deny access to other file types
+<FilesMatch "\.(html|htm|txt|log|json|xml|zip|tar|gz)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# PHP settings
+<IfModule mod_php.c>
+    php_flag display_errors off
+    php_value upload_max_filesize 2M
+    php_value post_max_size 8M
+</IfModule>

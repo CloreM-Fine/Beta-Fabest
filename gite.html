@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le nostre Gite - Anteas Lucca</title>
+    <meta name="description" content="Scopri il programma gite di Anteas Lucca. Escursioni, visite culturali e viaggi per scoprire il territorio e socializzare.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/css/tailwind.config.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="public/logo/logo.svg" alt="Anteas Lucca" class="w-12 h-12 object-contain">
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">Anteas Lucca</span>
+                        <p class="text-xs text-gray-500">Associazione di Volontariato</p>
+                    </div>
+                </a>
+                
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Home</a>
+                    <a href="chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Chi Siamo</a>
+                    <a href="servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Servizi</a>
+                    <a href="gite.html" class="text-cyan-600 font-semibold">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Blog</a>
+                    <a href="contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium transition-colors">5×1000</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <a href="/admin/index.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm">
+                        <i data-lucide="lock" class="w-4 h-4"></i>
+                        Area Riservata
+                    </a>
+                    <button id="menu-toggle" class="lg:hidden p-2 text-gray-600 hover:text-cyan-600 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="absolute inset-0 bg-black/50" id="menu-close"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-bold text-gray-900">Menu</span>
+                    <button id="menu-close-btn" class="p-2 text-gray-600 hover:text-cyan-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Home</a>
+                    <a href="chi-siamo.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Chi Siamo</a>
+                    <a href="servizi.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Servizi</a>
+                    <a href="gite.html" class="text-cyan-600 font-semibold py-2 border-b border-gray-100">Gite</a>
+                    <a href="blog/index.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Blog</a>
+                    <a href="contatti.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">Contatti</a>
+                    <a href="5x1000.html" class="text-gray-600 hover:text-cyan-600 font-medium py-2 border-b border-gray-100">5×1000</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-green-50 to-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-green-600 font-semibold text-sm uppercase tracking-wider">Scopri il territorio</span>
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6">Le nostre Gite</h1>
+                <p class="text-xl text-gray-600">Escursioni, visite culturali e viaggi per scoprire il territorio e socializzare</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Programma 2025 -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-green-600 to-emerald-700 rounded-2xl p-8 md:p-12 text-white text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-6">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    Programma in arrivo
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Programma Gite 2025</h2>
+                <p class="text-green-100 text-lg max-w-2xl mx-auto mb-8">Stiamo preparando un ricco calendario di escursioni e visite culturali per il 2025. Presto pubblicheremo tutte le date e le destinazioni!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 rounded-lg border border-white/20">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        <span>Destinazioni in tutta Italia</span>
+                    </div>
+                    <div class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 rounded-lg border border-white/20">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <span>Prezzi accessibili</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Info Box -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contatto Alfonso -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="user-circle" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Per informazioni contatta Alfonso</h2>
+                    <p class="text-gray-600 mb-6">Per maggiori informazioni sul programma gite, sulle prenotazioni e sui prezzi, chiama in sede e chiedi di Alfonso, il nostro referente per le attività di tempo libero.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="phone" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Telefono sede</p>
+                                <p class="font-semibold text-gray-900">0583 508862</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="mail" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Email</p>
+                                <p class="font-semibold text-gray-900">servizi@anteaslucca.it</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Come Prenotare -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <div class="w-16 h-16 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="clipboard-list" class="w-8 h-8 text-cyan-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Come prenotare</h2>
+                    <ol class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
+                            <p class="text-gray-600 pt-1">Chiama la sede e chiedi di Alfonso per conoscere le prossime destinazioni disponibili</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
+                            <p class="text-gray-600 pt-1">Prenota il tuo posto con anticipo (i posti sono limitati)</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
+                            <p class="text-gray-600 pt-1">Effettua il pagamento presso la sede</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
+                            <p class="text-gray-600 pt-1">Ritira il programma dettagliato con luogo e ora di ritrovo</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tipologie di Gite -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Le nostre proposte</h2>
+                <p class="text-gray-600">Diverse tipologie di gite per soddisfare tutti gli interessi</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="church" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Visite Culturali</h3>
+                    <p class="text-gray-600 text-sm">Musei, mostre, siti archeologici e luoghi di interesse storico-artistico</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mountain" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Natura</h3>
+                    <p class="text-gray-600 text-sm">Escursioni nei parchi naturali, gite in montagna e visite a giardini botanici</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="music" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Spettacoli</h3>
+                    <p class="text-gray-600 text-sm">Uscite per concerti, opera, balletto e manifestazioni culturali</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="utensils" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Enogastronomia</h3>
+                    <p class="text-gray-600 text-sm">Visite a cantine, aziende agricole e degustazioni di prodotti tipici</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Placeholder -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Momenti delle nostre gite</h2>
+                <p class="text-gray-600">Alcune immagini dalle escursioni passate</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&q=80" 
+                         alt="Gita 1" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80" 
+                         alt="Gita 2" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400&q=80" 
+                         alt="Gita 3" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="aspect-square bg-gray-200 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" 
+                         alt="Gita 4" class="w-full h-full object-cover hover:scale-105 transition-transform">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="py-16 bg-green-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Non perdere le prossime gite!</h2>
+            <p class="text-green-100 text-lg mb-8">Chiama la sede e chiedi di Alfonso per prenotare il tuo posto</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:0583508862" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    0583 508862
+                </a>
+                <a href="contatti.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Scrivici
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Anteas Lucca</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Associazione tutte le età attive per la solidarietà.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.facebook.com/anteas.lucca" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-600 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Link Rapidi</h3>
+                    <ul class="space-y-3">
+                        <li><a href="chi-siamo.html" class="hover:text-cyan-400 transition-colors">Chi Siamo</a></li>
+                        <li><a href="servizi.html" class="hover:text-cyan-400 transition-colors">Servizi</a></li>
+                        <li><a href="gite.html" class="hover:text-cyan-400 transition-colors">Gite</a></li>
+                        <li><a href="blog/index.html" class="hover:text-cyan-400 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contatti</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1 text-cyan-500"></i>
+                            <span>Viale Puccini, 1780<br>55100 Lucca (LU)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+                            <span>0583 508862</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Referente Gite</h3>
+                    <p class="text-gray-400 text-sm mb-4">Per informazioni sul programma gite:</p>
+                    <div class="flex items-center gap-2 text-sm">
+                        <i data-lucide="user" class="w-4 h-4 text-cyan-500"></i>
+                        <span>Chiedi di Alfonso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <p class="text-center text-sm">&copy; 2024 Anteas Lucca. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('menu-close-btn')?.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+    </script>
+</body>
+</html>
