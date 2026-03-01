@@ -6,6 +6,9 @@
 
 declare(strict_types=1);
 
+// Protezione accesso diretto
+define('ANTEAS_APP', true);
+
 require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../includes/auth_check.php';
 
