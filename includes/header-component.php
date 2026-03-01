@@ -90,7 +90,7 @@ $basePath = $basePath ?? '';
                 
                 <!-- Right Side -->
                 <div class="flex items-center gap-4">
-                    <a href="/admin/index.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm">
+                    <a href="<?php echo $basePath; ?>admin/index.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm">
                         <i data-lucide="lock" class="w-4 h-4"></i>
                         Area Riservata
                     </a>
@@ -123,7 +123,7 @@ $basePath = $basePath ?? '';
                     <a href="<?php echo $basePath; ?>blog/index.html" class="<?php echo $activeMenu === 'blog' ? 'text-cyan-600 font-semibold' : 'text-gray-600 hover:text-cyan-600'; ?> font-medium py-2 border-b border-gray-100">Blog</a>
                     <a href="<?php echo $basePath; ?>contatti.html" class="<?php echo $activeMenu === 'contatti' ? 'text-cyan-600 font-semibold' : 'text-gray-600 hover:text-cyan-600'; ?> font-medium py-2 border-b border-gray-100">Contatti</a>
                     <a href="<?php echo $basePath; ?>5x1000.html" class="<?php echo $activeMenu === '5x1000' ? 'text-cyan-600 font-semibold' : 'text-gray-600 hover:text-cyan-600'; ?> font-medium py-2 border-b border-gray-100">5×1000</a>
-                    <a href="/admin/index.php" class="inline-flex items-center gap-2 px-4 py-3 bg-cyan-50 text-cyan-700 rounded-lg font-medium mt-4">
+                    <a href="<?php echo $basePath; ?>admin/index.php" class="inline-flex items-center gap-2 px-4 py-3 bg-cyan-50 text-cyan-700 rounded-lg font-medium mt-4">
                         <i data-lucide="lock" class="w-4 h-4"></i>
                         Area Riservata
                     </a>
