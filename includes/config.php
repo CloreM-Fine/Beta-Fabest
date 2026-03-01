@@ -22,8 +22,8 @@ define('DB_CHARSET', 'utf8mb4');
 // JWT Configuration
 // IMPORTANTE: Cambiare questa chiave in produzione!
 define('JWT_SECRET', $_ENV['JWT_SECRET'] ?? 'cambia_questa_chiave_segreta_in_produzione_32caratteri!');
-define('JWT_ISSUER', 'anteaslucca.org');
-define('JWT_AUDIENCE', 'anteaslucca.org');
+define('JWT_ISSUER', 'beta.etereastudio.it');
+define('JWT_AUDIENCE', 'beta.etereastudio.it');
 define('JWT_EXPIRATION', 7200); // 2 ore in secondi
 
 // Session & Security

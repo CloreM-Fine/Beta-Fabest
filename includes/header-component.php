@@ -24,8 +24,8 @@ $basePath = $basePath ?? '';
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.anteaslucca.org">
-    <meta property="og:image" content="https://www.anteaslucca.org/public/logo/logo.svg">
+    <meta property="og:url" content="https://beta.etereastudio.it">
+    <meta property="og:image" content="https://beta.etereastudio.it/public/logo/logo.svg">
     <meta property="og:site_name" content="Anteas Lucca">
     
     <!-- Favicon -->
